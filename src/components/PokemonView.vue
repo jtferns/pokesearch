@@ -1,23 +1,25 @@
 <template>
-  <h2>PokéSearch</h2>
   <div>
-    <Search :searchTerm="searchTerm" :onSearch="onSearch" />
-    <Results :foundPkmn="foundPkmn" :total="pkmn.count" />
+    <h2>PokéSearch</h2>
+    <div>
+      <NameSearch :searchTerm="searchTerm" :onSearch="onSearch" />
+      <ResultsList :foundPkmn="foundPkmn" :total="pkmn.count" />
+    </div>
   </div>
 </template>
 
 <script>
-import Search from './Search.vue';
-import Results from './Results.vue';
+import NameSearch from './NameSearch.vue';
+import ResultsList from './ResultsList.vue';
 import pkmn from '../data/pokemon.json';
 
 const compareValue = (str) => str.toLowerCase();
 
 export default {
-  name: 'Pokemon',
+  name: 'PokemonView',
   components: {
-    Search,
-    Results,
+    NameSearch,
+    ResultsList,
   },
   data() {
     return {

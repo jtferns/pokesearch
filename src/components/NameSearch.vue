@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'Search',
+  name: 'NameSearch',
   props: {
     searchTerm: String,
     onSearch: Function,

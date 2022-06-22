@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <Pokemon />
+    <PokemonView />
   </div>
 </template>
 
 <script>
-import Pokemon from './components/Pokemon.vue';
+import PokemonView from './components/PokemonView.vue';
 import pkmn from './data/pokemon.json';
 
 export default {
   name: 'App',
   components: {
-    Pokemon,
+    PokemonView,
   },
   data() {
     return {
