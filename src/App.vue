@@ -1,25 +1,10 @@
-<template>
-  <div id="app">
-    <PokemonView />
-  </div>
-</template>
-
-<script>
-import PokemonView from './components/PokemonView.vue';
-import pkmn from './data/pokemon.json';
-
-export default {
-  name: 'App',
-  components: {
-    PokemonView,
-  },
-  data() {
-    return {
-      pkmn,
-    };
-  },
-};
+<script setup lang="ts">
+import { RouterView } from 'vue-router'
 </script>
+
+<template>
+  <RouterView />
+</template>
 
 <style>
 #app {
