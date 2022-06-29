@@ -1,7 +1,6 @@
 <script setup lang="ts"></script>
 
 <script lang="ts">
-import pkmn from '../data/pokemon.json'
 import NameSearch from '../components/NameSearch.vue'
 import ResultsList from '../components/ResultsList.vue'
 import type { PKMN } from '@/types/pokemon'
@@ -16,9 +15,17 @@ export default {
   },
   data() {
     return {
-      pkmn: pkmn as PKMN.SearchResults,
+      pkmn: {
+        count: 0,
+        results: [],
+      } as PKMN.SearchResults,
       searchTerm: '',
     }
+  },
+  mounted() {
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0')
+      .then((res) => res.json())
+      .then((res) => (this.pkmn = res))
   },
   methods: {
     onSearch(event: Event) {
